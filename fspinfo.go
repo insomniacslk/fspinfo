@@ -77,7 +77,7 @@ func (sv SpecVersion) String() string {
 type ImageAttribute uint16
 
 func (ia ImageAttribute) String() string {
-	ret := fmt.Sprintf("%#02x GraphicsDisplaySupported", uint16(ia))
+	ret := fmt.Sprintf("%#04x GraphicsDisplaySupported", uint16(ia))
 	if uint16(ia) & ^(uint16(1)) != 0 {
 		ret += " (reserved bits are not zeroed)"
 	}
@@ -112,7 +112,7 @@ func (ca ComponentAttribute) String() string {
 	default:
 		attrs = append(attrs, "TypeFSPReserved")
 	}
-	ret := fmt.Sprintf("%#02x %s", uint16(ca), strings.Join(attrs, "|"))
+	ret := fmt.Sprintf("%#04x %s", uint16(ca), strings.Join(attrs, "|"))
 	// bits 2:12 are reserved
 	if uint16(ca)&0x0ffe != 0 {
 		ret += " (reserved bits are not zeroed)"
