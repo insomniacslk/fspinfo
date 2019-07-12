@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/insomniacslk/fspinfo"
+	fsp "github.com/insomniacslk/fspinfo/pkg/fsp"
 	"github.com/linuxboot/fiano/pkg/uefi"
 )
 
@@ -29,7 +29,7 @@ func main() {
 	}
 	file := fv.Files[0]
 	// FIXME why does FSPH start at +4?
-	hdr, err := fspinfo.FromBytes(file.Buf()[file.DataOffset+4 : file.DataOffset+4+fspinfo.CurrentHeaderLength])
+	hdr, err := fsp.FromBytes(file.Buf()[file.DataOffset+4 : file.DataOffset+4+fsp.CurrentHeaderLength])
 	if err != nil {
 		panic(err)
 	}

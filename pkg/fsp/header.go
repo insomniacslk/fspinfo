@@ -28,9 +28,9 @@ const (
 	CurrentHeaderRevision = 3
 )
 
-// FSPInfoHeaderRev3 represents the FSP_INFO_HEADER structure revision 3 (FSP
+// InfoHeaderRev3 represents the FSP_INFO_HEADER structure revision 3 (FSP
 // 2.0) as defined by Intel.
-type FSPInfoHeaderRev3 struct {
+type InfoHeaderRev3 struct {
 	Signature                 [4]byte
 	HeaderLength              uint32
 	Reserved1                 [2]uint8
@@ -121,8 +121,8 @@ func (ca ComponentAttribute) String() string {
 }
 
 // FromBytes parses an FSP_INFO_HEADER from a byte buffer.
-func FromBytes(b []byte) (*FSPInfoHeaderRev3, error) {
-	var f FSPInfoHeaderRev3
+func FromBytes(b []byte) (*InfoHeaderRev3, error) {
+	var f InfoHeaderRev3
 	buf := uio.NewLittleEndianBuffer(b)
 	f.Signature[0] = buf.Read8()
 	f.Signature[1] = buf.Read8()
