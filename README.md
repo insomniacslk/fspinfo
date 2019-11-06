@@ -3,6 +3,8 @@
 `fspinfo` is a library and command line to parse and present [FSP](https://github.com/IntelFsp/FSP/blob/master/FSP_License.pdf)
 information.
 
+NOTE: fspinfo is now part of the [fiano](https://github.com/linuxboot/fiano) framework. Find it under [cmds/fspinfo](https://github.com/linuxboot/fiano/tree/master/cmds/fspinfo). So this repository is now deprecated and read-only.
+
 Intel FSP specification 2.0 can be found at
 https://www.intel.com/content/dam/www/public/us/en/documents/technical-specifications/fsp-architecture-spec-v2.pdf
 .
